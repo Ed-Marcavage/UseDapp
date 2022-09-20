@@ -1,6 +1,5 @@
 import React from "react";
 import logo from "./logo.svg";
-import "./App.css";
 import { Main } from "./components/Main";
 import { WalletInstallation } from "./components/organism/WalletInstallation";
 import { InfinityTower } from "./components/organism/InfinityTower/InfinityTower";
@@ -23,6 +22,7 @@ function App() {
         }}
       >
         <Title>Infinity Tower</Title>
+        {/* Ensure connected to correct network: WalletConnect */}
         <WalletConnect />
       </Header>
       <Container p="lg">
