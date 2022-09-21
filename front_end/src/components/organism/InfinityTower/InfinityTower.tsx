@@ -1,5 +1,5 @@
 import { Button, Card, Grid, Text } from "@mantine/core";
-import { Rinkeby, useEthers } from "@usedapp/core";
+import { Goerli, useEthers } from "@usedapp/core";
 import { useState } from "react";
 import { FloorItem } from "../../../hooks/Floors/Floors";
 import { FloorCreationModal } from "../FloorCreationModal";
@@ -32,7 +32,7 @@ export const InfinityTower = ({ floors }: InfinityTowerProps) => {
         onClick={() => setFloorCreationOpened(true)}
         variant="light"
         radius="xl"
-        disabled={!account || chainId !== Rinkeby.chainId}
+        disabled={!account || chainId !== Goerli.chainId}
         sx={{
           position: "fixed",
           bottom: 42,
