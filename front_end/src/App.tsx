@@ -4,11 +4,15 @@ import { Main } from "./components/Main";
 import { WalletInstallation } from "./components/organism/WalletInstallation";
 import { InfinityTower } from "./components/organism/InfinityTower/InfinityTower";
 import { WalletConnect } from "./components/organism/WalletConnect";
+import { useFloors } from "./hooks/Floors";
+import { Rinkeby, useEthers } from "@usedapp/core";
+import { useState } from "react";
 
 import { Container, Header, Title } from "@mantine/core";
 
 function App() {
   const { ethereum } = window as any;
+  const { floors } = useFloors();
 
   return (
     <div className="App">
@@ -27,7 +31,7 @@ function App() {
       </Header>
       <Container p="lg">
         {/* If Wallet not detetcted run: WalletInstallation */}
-        {!ethereum ? <WalletInstallation /> : <InfinityTower />}
+        {!ethereum ? <WalletInstallation /> : <InfinityTower floors={floors} />}
       </Container>
     </div>
   );
